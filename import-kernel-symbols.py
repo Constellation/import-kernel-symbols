@@ -31,7 +31,7 @@ import re
 template = """
 %s
 #define IMPORT_SYMBOL(name) \\
-    static typeof(&name) IMPORTED(name) = (typeof(&name))IMPORT_SYMBOL_VALUE_FOR_ ## name
+    static typeof(&name) IMPORTED(name) __attribute__((unused)) = (typeof(&name))IMPORT_SYMBOL_VALUE_FOR_ ## name
 #define IMPORTED(name) __i__ ## name
 """
 
