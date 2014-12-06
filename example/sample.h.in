@@ -1,0 +1,8 @@
+/*
+ * Hello World
+ */
+
+IMPORT_PROLOGUE
+
+IMPORT_SYMBOL(handle_mm_fault);
+IMPORT_SYMBOL(do_fork);
