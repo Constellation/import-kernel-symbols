@@ -52,4 +52,4 @@ IMPORT_SYMBOL(handle_mm_fault);
 #endif  /* SAMPLE_H_ */
 ```
 
-Since all symbols are resolved by this header correctly, you can call the hidden symbol with special syntax such as `IMPORTED(handle_mm_fault)(mm, vma, addr, flags)`.
+Since all symbols are resolved by this header correctly, you can call the hidden symbol via special syntax  `IMPORTED(handle_mm_fault)(mm, vma, addr, flags)`.
