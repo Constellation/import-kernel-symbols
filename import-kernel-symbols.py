@@ -31,7 +31,8 @@ import re
 template = """
 %s
 #define IMPORT_SYMBOL(name) \\
-    static __i__ ## name = IMPORT_VALUE_FOR ## name
+    static typeof(&name) IMPORTED(name) = (typeof(&name))IMPORT_SYMBOL_VALUE_FOR_ ## name
+#define IMPORTED(name) __i__ ## name
 """
 
 def main():
@@ -53,8 +54,8 @@ def main():
             addr = m.group(1)
             name = m.group(2)
             if dictionary.has_key(name):
-                imported.append("#define IMPORT_VALUE_FOR_%s (0x%sUL)" % (name, addr))
-    generated = header.replace('IMPORT_PROLOGUE', template % '\n'.join(imported))
+                imported.append("#define IMPORT_SYMBOL_VALUE_FOR_%s (0x%sUL)" % (name, addr))
+    generated = header.replace('IMPORT_SYMBOL_PROLOGUE', template % '\n'.join(imported))
 
     sys.stdout.write(generated)
     sys.stdout.flush()

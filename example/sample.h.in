@@ -1,8 +1,12 @@
 /*
  * Hello World
  */
+#ifndef SAMPLE_H_
+#define SAMPLE_H_
+#include <linux/mm.h>
 
-IMPORT_PROLOGUE
+IMPORT_SYMBOL_PROLOGUE
 
 IMPORT_SYMBOL(handle_mm_fault);
 IMPORT_SYMBOL(do_fork);
+#endif  /* SAMPLE_H_ */
