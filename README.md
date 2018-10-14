@@ -7,7 +7,7 @@ A tiny python script to generate headers importing non-exported kernel symbols.
 
 When crafting / testing / experimenting kernel modules, occationally you need to call non-exported kernel symbols.
 If you can call non-exported symbols without attaching `EXPORT_SYMBOL` to those symbols, you can try using these functions without modifying / recompiling the kernel.
-In addition to this benefit, you can keep your kernel module simple, loadable and external. It's a desirable feature for in-house kernel modules. (When you to upstream it, you simply modify the kernel :))
+In addition to this benefit, you can keep your kernel module simple, loadable and external. It's a desirable feature for in-house kernel modules. (When you want to upstream it, you simply modify the kernel :))
 
 This python script generates references to the specified non-exported symbols.
 It extracts symbol kernel space address from `System.map`, and generates header for easy use.
